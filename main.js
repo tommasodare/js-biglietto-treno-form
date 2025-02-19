@@ -1,7 +1,11 @@
 const formEl = document.getElementById("form")
-const distanceEl = document.querySelector(".distance")
-const ageEl = document.querySelector(".age")
+const nameEl = document.getElementById("username")
+const distanceEl = document.getElementById("km")
+const ageEl = document.getAnimations("age")
 const buttonEl = document.querySelector("button")
+
+const cardName = document.querySelector(".name")
+const cardPrice = document.querySelector(".price")
 
 //console.log(distanceEl, ageEl);
 
@@ -40,4 +44,9 @@ buttonEl.addEventListener("click", function(){
     } else {
         console.log(price);
     }
+
+    cardName.innerHTML = nameEl.value
+    cardPrice.innerHTML = price.toFixed(2)
 })
+
+
