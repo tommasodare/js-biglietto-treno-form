@@ -2,10 +2,14 @@ const distanceEl = document.querySelector(".distance")
 const ageEl = document.querySelector(".age")
 //console.log(distanceEl, ageEl);
 
-function userDistance() {
-    const userQuestion = Number(prompt("Chose how many km do you want"))
-    console.log(userQuestion);
-    return
-}
+const userDistance = Number(prompt("Type here how many km"))
+const userAge = Number(prompt("Type your age"))
+const price = userDistance*0.21
 
-userDistance()
+if (userAge < 18) {
+    console.log(price - 0.2*price);
+} else if (userAge >= 65) {
+    console.log(price - 0.4*price);
+} else {
+    console.log(price);
+}
