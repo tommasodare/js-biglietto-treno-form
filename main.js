@@ -1,7 +1,7 @@
 const formEl = document.getElementById("form")
 const nameEl = document.getElementById("username")
 const distanceEl = document.getElementById("km")
-const ageEl = document.getAnimations("age")
+const ageEl = document.getElementById("age")
 const buttonEl = document.querySelector("button")
 
 const cardName = document.querySelector(".name")
@@ -37,16 +37,16 @@ buttonEl.addEventListener("click", function(){
     const price = Number(0.21*distanceEl.value)
     //console.log(price);
 
-    if (ageEl.value < 18) {
-       console.log(price - 0.2*price)
-    } else if (ageEl.value >= 65) {
-        console.log(price - 0.4*price)
-    } else {
-        console.log(price);
-    }
-
     cardName.innerHTML = nameEl.value
-    cardPrice.innerHTML = price.toFixed(2)
+    //cardPrice.innerHTML = price.toFixed(2)
+
+    if (ageEl.value < 18) {
+       cardPrice.innerHTML = (price - 0.2*price).toFixed(2)
+    } else if (ageEl.value >= 65) {
+        cardPrice.innerHTML = (price - 0.4*price).toFixed(2)
+    } else {
+        cardPrice.innerHTML = (price).toFixed(2)
+    }
 })
 
 
